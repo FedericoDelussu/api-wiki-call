@@ -1,0 +1,21 @@
+[project]
+name = "api-wiki-call"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "FedericoDelussu",email = "federico.delussu@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic (>=2.13.5,<3.0.0)",
+    "requests (>=2.34.2,<3.0.0)",
+    "ipykernel (>=7.3.0,<8.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "api_wiki_call", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
