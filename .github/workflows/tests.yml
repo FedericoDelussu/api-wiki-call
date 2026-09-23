@@ -1,14 +1,14 @@
 name: tests
-  on: [push, pull_request]
+on: [push, pull_request]
 
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4        # fetch your code
-        - uses: actions/setup-python@v5    # install Python
-          with:
-            python-version: "3.10"
-        - run: pipx install poetry         # install Poetry
-        - run: poetry install              # create the venv, install dependencies + pytest
-        - run: poetry run pytest           # same command you use locally
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4        # fetch your code
+      - uses: actions/setup-python@v5    # install Python
+        with:
+          python-version: "3.10"
+      - run: pipx install poetry         # install Poetry
+      - run: poetry install              # create the venv, install dependencies + pytest
+      - run: poetry run pytest           # same command you use locally
