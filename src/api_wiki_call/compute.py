@@ -26,7 +26,7 @@ def _years_between(start: int, end: int) -> int:
     '''
     Wikidata has no year 0 (1 BC is -1), so skip it when crossing BC -> AD
     '''
-    years = start - end
+    years = end - start
     if start < 0 < end:
         years -= 1
     return years
@@ -49,7 +49,7 @@ class User:
         '''
         if not self.is_alive:
             return None
-        return _years_between(self.year_death, date.today().year)
+        return _years_between(self.year_birth, date.today().year)
 
     @property
     def lifespan(self) -> int | None:
